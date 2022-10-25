@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138163705103",
+    "project_id": "test-e6ea4",
+    "storage_bucket": "test-e6ea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138163705103:android:5022e00df1b9b7a8609a7a",
+        "android_client_info": {
+          "package_name": "com.kux.amazonbreak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138163705103-3dtm4t5cgcmt0jnv5b35bi0dva4jt8e9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJpMZZPIvpzkerATplSHaYKgXsoXjCSIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138163705103-3dtm4t5cgcmt0jnv5b35bi0dva4jt8e9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
