@@ -32,8 +32,8 @@ class Home extends StatelessWidget {
             SizedBox(
                 width: 200,
                 height: 40,
-                child:
-                    ElevatedButton(onPressed: () {}, child: Text('button 2'))),
+                child: ElevatedButton(
+                    onPressed: () {}, child: Text('just for github test'))),
             SizedBox(
               height: 5,
             ),
