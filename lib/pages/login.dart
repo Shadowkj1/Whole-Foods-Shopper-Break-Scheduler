@@ -16,7 +16,9 @@ class Login extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextField(decoration: InputDecoration(hintText: 'Enter Username')),
+            TextField(
+              decoration: InputDecoration(hintText: 'Enter Username'),
+            ),
             TextField(decoration: InputDecoration(hintText: 'Enter Password'))
           ],
         ),
