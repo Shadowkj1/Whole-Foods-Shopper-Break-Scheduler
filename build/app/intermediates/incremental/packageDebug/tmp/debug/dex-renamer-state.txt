@@ -1,4 +1,4 @@
-#Wed Oct 26 05:16:25 EDT 2022
+#Fri Oct 28 23:44:37 EDT 2022
 base.2=C\:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

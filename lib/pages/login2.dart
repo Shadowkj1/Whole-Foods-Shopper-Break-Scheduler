@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     User? status = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      backgroundColor: Colors.blue[700],
+      backgroundColor: Colors.blue[400],
       body: Padding(
         padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
         child: Column(

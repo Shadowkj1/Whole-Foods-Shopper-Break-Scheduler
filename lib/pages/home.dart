@@ -26,6 +26,7 @@ class Home extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(height: 30),
                   Text("Auth User (Logged" +
                       (aUser == null ? " out" : " in") +
                       ")")

@@ -15,7 +15,26 @@ class _ScheduleState extends State<Schedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(child: Container(child: Text('this is the schedule screen'))),
+        body: SafeArea(
+            child: Container(
+                child: Column(
+          children: [
+            Text('this is the schedule screen'),
+            DataTable(columns: [
+              DataColumn(label: Text('data1')),
+              DataColumn(label: Text('data2'))
+            ], rows: [
+              DataRow(cells: [
+                DataCell(Text('datarow1,1')),
+                DataCell(Text('datarow1,2'))
+              ]),
+              DataRow(cells: [
+                DataCell(Text('datarow2,1')),
+                DataCell(Text('datarow2,2'))
+              ])
+            ])
+          ],
+        ))),
         appBar: AppBar(
           title: Text('k'),
         ));
