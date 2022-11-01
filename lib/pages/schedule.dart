@@ -77,65 +77,66 @@ class _ScheduleState extends State<Schedule> {
                   test = sStart;
                   String formattedTime = DateFormat.Hm().format(test);
                   //////////////////////////////////////
-                  return Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Color.fromARGB(255, 107, 185, 248),
-                              border: Border.all(
-                                  color: Color.fromARGB(255, 5, 98, 204))),
-                          //color: Colors.green,
-                          alignment: Alignment.center,
-                          child: SizedBox(
-                            height: 100,
-                            child: Stack(
-                              children: [
-                                Container(
-                                  alignment: Alignment(-.97, -.97),
-                                  child: Text(
-                                    document['job'] + ":",
-                                    style: TextStyle(
-                                        color: Color.fromARGB(255, 0, 0, 0)),
+                  return Container(
+                    color: Color.fromARGB(120, 35, 102, 46),
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                color: Color.fromARGB(255, 91, 177, 88),
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 8, 119, 51))),
+                            //color: Colors.green,
+                            alignment: Alignment.center,
+                            child: SizedBox(
+                              height: 100,
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    alignment: Alignment(-.97, -.97),
+                                    child: Text(
+                                      document['job'] + ":",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(255, 0, 0, 0)),
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  alignment: Alignment(-.65, -.97),
-                                  child: Text(
-                                    document['name'],
-                                    style: TextStyle(
-                                        color: Color.fromARGB(255, 0, 0, 0)),
+                                  Container(
+                                    alignment: Alignment(-.65, -.97),
+                                    child: Text(
+                                      document['name'],
+                                      style: TextStyle(
+                                          color: Color.fromARGB(255, 0, 0, 0)),
+                                    ),
                                   ),
-                                ),
-                                //Text(document['shift'].toString()),
-                                //Top Text
-                                Container(
-                                    alignment: Alignment(-.4, -.4),
-                                    child: Text(
-                                      "Shift Start: $shiftStart -> $breakStart",
-                                      style: TextStyle(fontSize: 19),
-                                    )),
-                                //Middle text
-                                Container(
-                                    alignment: Alignment(-.43, 0.1),
-                                    child: Text(
-                                        "Break Start:  $breakStart -> $breakEnd",
-                                        style: TextStyle(fontSize: 19))),
-                                //Bottom text
-                                Container(
-                                    alignment: Alignment(-.55, .55),
-                                    child: Text(
-                                        "Shift Ends: $breakEnd -> $shiftEnd",
-                                        style: TextStyle(fontSize: 19))),
-                              ],
+                                  //Text(document['shift'].toString()),
+                                  //Top Text
+                                  Container(
+                                      alignment: Alignment(-.4, -.4),
+                                      child: Text(
+                                        "$shiftStart -> $breakStart",
+                                        style: TextStyle(fontSize: 19),
+                                      )),
+                                  //Middle text
+                                  Container(
+                                      alignment: Alignment(-.43, 0.1),
+                                      child: Text("$breakStart -> $breakEnd",
+                                          style: TextStyle(fontSize: 19))),
+                                  //Bottom text
+                                  Container(
+                                      alignment: Alignment(-.43, .55),
+                                      child: Text("$breakEnd -> $shiftEnd",
+                                          style: TextStyle(fontSize: 19))),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   );
                 },
               );
@@ -146,6 +147,7 @@ class _ScheduleState extends State<Schedule> {
           },
         ),
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 6, 87, 8),
           title: Text('Schedule'),
         ));
   }

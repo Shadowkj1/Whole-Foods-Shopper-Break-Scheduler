@@ -1,4 +1,4 @@
-#Tue Nov 01 00:09:17 EDT 2022
+#Tue Nov 01 04:18:04 EDT 2022
 base.2=G\:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=G\:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

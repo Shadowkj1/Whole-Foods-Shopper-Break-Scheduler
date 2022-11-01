@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     User? status = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      backgroundColor: Colors.blue[400],
+      backgroundColor: Color.fromARGB(255, 91, 177, 88),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
         child: Column(
@@ -49,6 +49,7 @@ class _LoginState extends State<Login> {
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 minimumSize: Size.fromHeight(50),
+                backgroundColor: Color.fromARGB(255, 6, 87, 8),
               ),
               icon: Icon(Icons.lock_open, size: 32),
               label: Text(

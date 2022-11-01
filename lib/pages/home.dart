@@ -17,9 +17,16 @@ class Home extends StatelessWidget {
     User? aUser = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
-        backgroundColor: Colors.blue[400],
+        backgroundColor: Color.fromARGB(255, 91, 177, 88),
         body: Stack(
           children: [
+            Container(
+              alignment: Alignment(0, -.5),
+              child: Image(
+                  height: 350,
+                  width: 350,
+                  image: AssetImage('assets/WFCircleLogo.png')),
+            ),
             Container(
               alignment: Alignment(0, -1),
               child: Column(
@@ -42,6 +49,9 @@ class Home extends StatelessWidget {
                     height: 50,
                     width: 260,
                     child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Color.fromARGB(255, 6, 87, 8))),
                         onPressed: (() {
                           Navigator.push(
                               context,
@@ -58,6 +68,9 @@ class Home extends StatelessWidget {
                     height: 50,
                     width: 260,
                     child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all(
+                                Color.fromARGB(255, 6, 87, 8))),
                         onPressed: (() {
                           print('I AM THE BREAK BUTTON');
                         }),
@@ -72,6 +85,9 @@ class Home extends StatelessWidget {
             Container(
               alignment: Alignment(-.92, .988),
               child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          Color.fromARGB(255, 6, 87, 8))),
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut().then((value) {
                       Navigator.push(context,
@@ -84,30 +100,3 @@ class Home extends StatelessWidget {
         ));
   }
 }
-      
-      /*SafeArea(
-          child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            SizedBox(
-                width: 200,
-                height: 40,
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Schedule()));
-                    },
-                    child: Text('button 1'))),
-            SizedBox(
-              height: 15,
-            ),
-            SizedBox(
-                width: 200,
-                height: 40,
-                child:
-                    ElevatedButton(onPressed: () {}, child: Text('button 2'))),
-          ])
-        ],
-      )),*/
- 
