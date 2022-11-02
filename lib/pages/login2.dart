@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_interpolation_to_compose_strings
 
 import 'package:amazonbreak/pages/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     User? status = FirebaseAuth.instance.currentUser;
     return Scaffold(
-      backgroundColor: Colors.blue[700],
+      backgroundColor: Color.fromARGB(255, 91, 177, 88),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
         child: Column(
@@ -49,6 +49,7 @@ class _LoginState extends State<Login> {
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 minimumSize: Size.fromHeight(50),
+                backgroundColor: Color.fromARGB(255, 6, 87, 8),
               ),
               icon: Icon(Icons.lock_open, size: 32),
               label: Text(
