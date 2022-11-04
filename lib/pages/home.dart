@@ -100,3 +100,10 @@ class Home extends StatelessWidget {
         ));
   }
 }
+
+/*
+
+ User? user = FirebaseAuth.instance.currentUser;
+    final realRef =
+        FirebaseFirestore.instance.collection("Shoppers").doc(user!.uid).get();
+*/
