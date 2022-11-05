@@ -42,7 +42,9 @@ class _ScheduleState extends State<Schedule> {
 
             //checking that the connection is active
             if (snapshot.connectionState == ConnectionState.active) {
+              //Query all the documents in the collection
               QuerySnapshot querySnapshot = snapshot.data;
+              //put the documents of said query in a List
               List<QueryDocumentSnapshot> listQueryDocumentSnapshot =
                   querySnapshot.docs;
               return ListView.builder(

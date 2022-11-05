@@ -2,6 +2,7 @@
 
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
+import 'package:amazonbreak/pages/timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,14 @@ class Home extends StatelessWidget {
   Home({super.key});
 
   String? userName;
+  final timeIsNow = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
     User? aUser = FirebaseAuth.instance.currentUser;
     //making an reference to the instance
-    final realRef =
-        FirebaseFirestore.instance.collection("Shoppers").doc(aUser!.uid).get();
+    DocumentReference realRef =
+        FirebaseFirestore.instance.collection("Shoppers").doc(aUser!.uid);
     String UID = aUser.uid;
 ////////////////////////////////////////
     // get User (or so we may say~)
@@ -89,8 +91,22 @@ class Home extends StatelessWidget {
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
                                 Color.fromARGB(255, 6, 87, 8))),
-                        onPressed: (() {
+                        onPressed: (() async {
                           print('I AM THE BREAK BUTTON');
+                          //Create a Map with the input data
+                          Map<String, dynamic> dataToUpdate = {
+                            'break': timeIsNow,
+                          };
+                          //update the break TimeStamp in the database with now
+                          CollectionReference collection =
+                              FirebaseFirestore.instance.collection('Shoppers');
+                          DocumentReference document =
+                              collection.doc(aUser.uid);
+                          document.update(dataToUpdate);
+
+                          //on push bring us to the timer screen
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Timer()));
                         }),
                         child: Text(
                           'Go On Break',

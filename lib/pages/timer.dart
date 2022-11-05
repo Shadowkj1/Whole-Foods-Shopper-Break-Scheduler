@@ -13,9 +13,12 @@ class _TimerState extends State<Timer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text('this is the timer screen~'),
-      ),
-    );
+        body: Stack(
+          children: [],
+        ),
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 6, 87, 8),
+          title: Text('Timer'),
+        ));
   }
 }
