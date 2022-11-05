@@ -1,21 +1,30 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'dart:ui';
-
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  Home({super.key});
+
+  String? userName;
 
   @override
   Widget build(BuildContext context) {
     User? aUser = FirebaseAuth.instance.currentUser;
+    //making an reference to the instance
+    final realRef =
+        FirebaseFirestore.instance.collection("Shoppers").doc(aUser!.uid).get();
+    String UID = aUser.uid;
+////////////////////////////////////////
+    // get User (or so we may say~)
 
+////////////////////////////////////////////////
+    //UI
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 91, 177, 88),
         body: Stack(
@@ -36,7 +45,16 @@ class Home extends StatelessWidget {
                   SizedBox(height: 30),
                   Text("Auth User (Logged" +
                       (aUser == null ? " out" : " in") +
-                      ")")
+                      ")"),
+                  SizedBox(),
+                  Text("Uid = " + (aUser == null ? " out" : aUser.uid)),
+                  FutureBuilder(
+                      future: _fetch(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState != ConnectionState.done)
+                          return Text('Loading data....Please wait');
+                        return Text('your name:  $userName');
+                      })
                 ],
               ),
             ),
@@ -98,6 +116,20 @@ class Home extends StatelessWidget {
             )
           ],
         ));
+  }
+
+  //function to fetch the users name
+  _fetch() async {
+    final firebaseUser = await FirebaseAuth.instance.currentUser;
+    if (firebaseUser != null) {
+      await FirebaseFirestore.instance
+          .collection('Shoppers')
+          .doc(firebaseUser.uid)
+          .get()
+          .then((ds) {
+        userName = ds.data()!['name'];
+      });
+    }
   }
 }
 
