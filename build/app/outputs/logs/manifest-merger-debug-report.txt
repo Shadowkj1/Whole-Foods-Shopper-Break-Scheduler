@@ -44,6 +44,7 @@ MERGED from G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amaz
 MERGED from [:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:path_provider_android] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\kesha\.gradle\caches\transforms-3\90bf28973fd446d08c79e8865d177be2\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\kesha\.gradle\caches\transforms-3\e1f5bf00836c889852a9a2014464d260\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\kesha\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
@@ -76,8 +77,8 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\kesha\.gradle\cache
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\kesha\.gradle\caches\transforms-3\cfaa035a43a363ad38f5365ab0b90d5a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kesha\.gradle\caches\transforms-3\0874b2ce249aebd6be8581da2886a270\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\kesha\.gradle\caches\transforms-3\4347c219bb49b5517c0901825a211a72\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.48.1] C:\Users\kesha\.gradle\caches\transforms-3\2926cbc8da7cfff1c5633b32799072d8\transformed\jetified-grpc-android-1.48.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\kesha\.gradle\caches\transforms-3\f95b31beb5b7f2eb055a97bf2e6fcf0f\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 INJECTED from G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\android\app\src\debug\AndroidManifest.xml:1:1-8:12
 INJECTED from G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\android\app\src\debug\AndroidManifest.xml:1:1-8:12
@@ -106,6 +107,8 @@ MERGED from [:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Com
 MERGED from [:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\kesha\.gradle\caches\transforms-3\90bf28973fd446d08c79e8865d177be2\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\kesha\.gradle\caches\transforms-3\90bf28973fd446d08c79e8865d177be2\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\kesha\.gradle\caches\transforms-3\e1f5bf00836c889852a9a2014464d260\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
@@ -170,10 +173,10 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kesha\.gradle\ca
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\kesha\.gradle\caches\transforms-3\0874b2ce249aebd6be8581da2886a270\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\kesha\.gradle\caches\transforms-3\4347c219bb49b5517c0901825a211a72\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\kesha\.gradle\caches\transforms-3\4347c219bb49b5517c0901825a211a72\transformed\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.48.1] C:\Users\kesha\.gradle\caches\transforms-3\2926cbc8da7cfff1c5633b32799072d8\transformed\jetified-grpc-android-1.48.1\AndroidManifest.xml:5:5-7:41
 MERGED from [io.grpc:grpc-android:1.48.1] C:\Users\kesha\.gradle\caches\transforms-3\2926cbc8da7cfff1c5633b32799072d8\transformed\jetified-grpc-android-1.48.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\kesha\.gradle\caches\transforms-3\8129b238d4d069661aca07bff47ad65b\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\kesha\.gradle\caches\transforms-3\f95b31beb5b7f2eb055a97bf2e6fcf0f\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\kesha\.gradle\caches\transforms-3\f95b31beb5b7f2eb055a97bf2e6fcf0f\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 INJECTED from G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\android\app\src\debug\AndroidManifest.xml

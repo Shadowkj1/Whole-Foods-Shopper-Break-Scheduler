@@ -6,6 +6,7 @@ import 'package:amazonbreak/pages/timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class Home extends StatelessWidget {
@@ -29,15 +30,36 @@ class Home extends StatelessWidget {
 ////////////////////////////////////////////////
     //UI
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 91, 177, 88),
+        backgroundColor: Color.fromARGB(255, 0, 158, 98),
         body: Stack(
           children: [
             Container(
-              alignment: Alignment(0, -.5),
+              alignment: /*Alignment(0, -.5 */ Alignment(-.96, -.92),
               child: Image(
-                  height: 350,
-                  width: 350,
+                  height: 70,
+                  width: 70,
                   image: AssetImage('assets/WFCircleLogo.png')),
+            ),
+            Container(
+              alignment: Alignment(0, -.5),
+              decoration: BoxDecoration(),
+              child: FutureBuilder(
+                  future: _fetch(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState != ConnectionState.done) {
+                      return CircularProgressIndicator(
+                        color: Colors.green,
+                      );
+                    }
+                    return Container(
+                      alignment: Alignment(0, -.5),
+                      child: Text(
+                        'Welcome $userName',
+                        style: GoogleFonts.lato(
+                            fontSize: 42, fontWeight: FontWeight.w500),
+                      ),
+                    );
+                  }),
             ),
             Container(
               alignment: Alignment(0, -1),
@@ -72,13 +94,18 @@ class Home extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Text(
+                    'View Todays Schedule',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 1, 86, 54), fontSize: 24),
+                  ),
                   SizedBox(
                     height: 50,
                     width: 260,
                     child: ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Color.fromARGB(255, 6, 87, 8))),
+                                Color.fromARGB(255, 0, 111, 70))),
                         onPressed: (() {
                           Navigator.push(
                               context,
@@ -89,7 +116,12 @@ class Home extends StatelessWidget {
                             Text('Schedule', style: TextStyle(fontSize: 23))),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 40,
+                  ),
+                  Text(
+                    'Start Your Break Timer',
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 1, 86, 54), fontSize: 24),
                   ),
                   SizedBox(
                     height: 50,
@@ -97,7 +129,7 @@ class Home extends StatelessWidget {
                     child: ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all(
-                                Color.fromARGB(255, 6, 87, 8))),
+                                Color.fromARGB(255, 0, 111, 70))),
                         onPressed: (() async {
                           print('I AM THE BREAK BUTTON');
                           //Create a Map with the input data
@@ -123,7 +155,7 @@ class Home extends StatelessWidget {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                          Color.fromARGB(255, 6, 87, 8))),
+                          Color.fromARGB(255, 0, 111, 70))),
                   onPressed: () async {
                     await FirebaseAuth.instance.signOut().then((value) {
                       Navigator.push(context,
@@ -151,6 +183,11 @@ class Home extends StatelessWidget {
     }
   }
 }
+
+// Text(
+//                       'Hello! $userName',
+//                       style: GoogleFonts.montserrat(fontSize: 30),
+//                     );
 
 /*
 

@@ -80,7 +80,7 @@ class _ScheduleState extends State<Schedule> {
                   String formattedTime = DateFormat.Hm().format(test);
                   //////////////////////////////////////
                   return Container(
-                    color: Color.fromARGB(120, 35, 102, 46),
+                    color: Color.fromARGB(120, 0, 198, 123),
                     child: Stack(
                       children: [
                         Padding(
@@ -89,9 +89,9 @@ class _ScheduleState extends State<Schedule> {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
-                                color: Color.fromARGB(255, 91, 177, 88),
+                                color: Color.fromARGB(255, 0, 133, 83),
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 8, 119, 51))),
+                                    color: Color.fromARGB(255, 1, 86, 54))),
                             //color: Colors.green,
                             alignment: Alignment.center,
                             child: SizedBox(
@@ -149,8 +149,8 @@ class _ScheduleState extends State<Schedule> {
           },
         ),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 6, 87, 8),
-          title: Text('Schedule'),
+          backgroundColor: Color.fromARGB(255, 0, 111, 70),
+          title: Text('Today\'s Schedule'),
         ));
   }
 }
