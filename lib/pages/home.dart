@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print
 
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
@@ -6,13 +6,14 @@ import 'package:amazonbreak/pages/timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:intl/intl.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
 
   String? userName;
+  String? shiftFormat;
+  DateTime? shift;
   final timeIsNow = DateTime.now();
 
   @override
@@ -45,9 +46,7 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 30),
-                  Text("Auth User (Logged" +
-                      (aUser == null ? " out" : " in") +
-                      ")"),
+                  Text("Auth User (Logged${aUser == null ? " out" : " in"})"),
                   SizedBox(),
                   Text("Uid = " + (aUser == null ? " out" : aUser.uid)),
                   FutureBuilder(
@@ -56,6 +55,14 @@ class Home extends StatelessWidget {
                         if (snapshot.connectionState != ConnectionState.done)
                           return Text('Loading data....Please wait');
                         return Text('your name:  $userName');
+                      }),
+                  FutureBuilder(
+                      future: _fetch(),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState != ConnectionState.done) {
+                          return Text('Loading....');
+                        }
+                        return Text('shift time: ....nothing');
                       })
                 ],
               ),
@@ -98,12 +105,7 @@ class Home extends StatelessWidget {
                             'break': timeIsNow,
                           };
                           //update the break TimeStamp in the database with now
-                          CollectionReference collection =
-                              FirebaseFirestore.instance.collection('Shoppers');
-                          DocumentReference document =
-                              collection.doc(aUser.uid);
-                          document.update(dataToUpdate);
-
+                          realRef.update(dataToUpdate);
                           //on push bring us to the timer screen
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => Timer()));
@@ -129,13 +131,14 @@ class Home extends StatelessWidget {
                     });
                   },
                   child: Text('Log Out')),
-            )
+            ),
           ],
         ));
   }
 
   //function to fetch the users name
   _fetch() async {
+    // ignore: await_only_futures
     final firebaseUser = await FirebaseAuth.instance.currentUser;
     if (firebaseUser != null) {
       await FirebaseFirestore.instance
