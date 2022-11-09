@@ -5,6 +5,7 @@ import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'pages/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -19,13 +20,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Login(),
-    );
+    return MultiProvider(providers: 
+    
+    
+    )
   }
 }
 
 
+//The simple Material app return just to get to one screen at a time
+/*
+MaterialApp(
+      home: Login(),
+    );
+*/
+
+//Ye olde Routing Approach, we might have to come back here 
 /*
 initialRoute: '/Login', routes: {
     '/': (context) => Home(),
