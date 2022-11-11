@@ -16,6 +16,9 @@ class _TimerState extends State<Timer> {
   var userRef = FirebaseFirestore.instance.collection('Shopper');
   User? aUser = FirebaseAuth.instance.currentUser;
 
+
+
+
   void initState() {
     //_fetch2();
     super.initState();

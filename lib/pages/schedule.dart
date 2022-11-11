@@ -55,6 +55,11 @@ class _ScheduleState extends State<Schedule> {
                   /////////////////////////////////////////
                   ///Where the logic happens
                   DateTime sStart, sEnd, bStart, bEnd, test;
+                  //////////////////////////////// test time
+                  DateTime realBreak;
+
+                  realBreak = document['break'].toDate();
+                  String stringRealBreak = DateFormat.Hm().format(realBreak);
 
                   //we will only need to take in the 'shift' time because we can just do all the math
                   //with that one variable (maybe)
@@ -119,7 +124,7 @@ class _ScheduleState extends State<Schedule> {
                                   Container(
                                       alignment: Alignment(-.4, -.4),
                                       child: Text(
-                                        "$shiftStart -> $breakStart",
+                                        "$shiftStart -> $stringRealBreak",
                                         style: TextStyle(fontSize: 19),
                                       )),
                                   //Middle text

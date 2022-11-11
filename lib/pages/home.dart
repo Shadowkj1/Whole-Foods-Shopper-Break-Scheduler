@@ -17,6 +17,12 @@ class Home extends StatelessWidget {
   DateTime? shift;
   final timeIsNow = DateTime.now();
 
+  //this value will indicate if someone is on break or not. if the value
+  // is 1 then "someone" is on break. if 0 then no one is on break
+  // a user should NOT be allowed to START their break if the value is at 1
+  //BUT if the user is already in a break then it should not interfere with the current break user
+  int areYouOnBreak = 0;
+
   @override
   Widget build(BuildContext context) {
     User? aUser = FirebaseAuth.instance.currentUser;
