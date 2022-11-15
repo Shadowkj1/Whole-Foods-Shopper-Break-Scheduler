@@ -28,8 +28,9 @@ class _HomeState extends State<Home> {
 
   final timeIsNow = DateTime.now();
 
-  DocumentReference breakRefforStream =
-      FirebaseFirestore.instance.collection("Shoppers").doc("breakActivity");
+  DocumentReference breakRefforStream = FirebaseFirestore.instance
+      .collection("BreakActivity")
+      .doc("breakActivity");
 
   late Stream<DocumentSnapshot> _streamBreak;
 
@@ -46,8 +47,9 @@ class _HomeState extends State<Home> {
     DocumentReference realRef =
         FirebaseFirestore.instance.collection("Shoppers").doc(aUser!.uid);
 
-    DocumentReference breakRef =
-        FirebaseFirestore.instance.collection("Shoppers").doc("breakActivity");
+    DocumentReference breakRef = FirebaseFirestore.instance
+        .collection("BreakActivity")
+        .doc("breakActivity");
     String UID = aUser.uid;
 ////////////////////////////////////////
     // get User (or so we may say~)
@@ -356,7 +358,7 @@ class _HomeState extends State<Home> {
   isBreakActive() async {
     // ignore: await_only_futures
     await FirebaseFirestore.instance
-        .collection('Shoppers')
+        .collection('BreakActivity')
         .doc('breakActivity')
         .get()
         .then((ds) {
