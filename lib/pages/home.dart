@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print, dead_code
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print, dead_code, unrelated_type_equality_checks
 
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
@@ -28,15 +28,22 @@ class _HomeState extends State<Home> {
 
   final timeIsNow = DateTime.now();
 
-  DocumentReference breakRefforStream =
-      FirebaseFirestore.instance.collection("Shoppers").doc("breakActivity");
+  DocumentReference breakRefforStream = FirebaseFirestore.instance
+      .collection("BreakActivity")
+      .doc("breakActivity");
 
-  late Stream<DocumentSnapshot> _streamBreak;
+  DocumentReference breakTimeRefforStream = FirebaseFirestore.instance
+      .collection("Shoppers")
+      .doc(FirebaseAuth.instance.currentUser!.uid.toString());
+
+  late Stream<DocumentSnapshot> breakActivityStream;
+  late Stream<DocumentSnapshot> breakTimeStream;
 
   @override
   void initState() {
     super.initState();
-    _streamBreak = breakRefforStream.snapshots();
+    breakActivityStream = breakRefforStream.snapshots();
+    breakTimeStream = breakTimeRefforStream.snapshots();
   }
 
   @override
@@ -46,8 +53,9 @@ class _HomeState extends State<Home> {
     DocumentReference realRef =
         FirebaseFirestore.instance.collection("Shoppers").doc(aUser!.uid);
 
-    DocumentReference breakRef =
-        FirebaseFirestore.instance.collection("Shoppers").doc("breakActivity");
+    DocumentReference breakRef = FirebaseFirestore.instance
+        .collection("BreakActivity")
+        .doc("breakActivity");
     String UID = aUser.uid;
 ////////////////////////////////////////
     // get User (or so we may say~)
@@ -65,27 +73,53 @@ class _HomeState extends State<Home> {
                   width: 70,
                   image: AssetImage('assets/WFCircleLogo.png')),
             ),
-            Container(
-              alignment: Alignment(0, -.5),
-              decoration: BoxDecoration(),
-              child: FutureBuilder(
-                  future: _fetch(),
-                  builder: (context, snapshot) {
-                    if (snapshot.connectionState != ConnectionState.done) {
-                      return CircularProgressIndicator(
-                        color: Colors.green,
-                      );
-                    }
+
+            //The Welcome text
+            StreamBuilder(
+                stream: breakTimeStream,
+                builder: ((context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.active) {
+                    DocumentSnapshot? document = snapshot.data;
+
+                    DateTime breakTimeRaw = document!['break'].toDate();
+                    String name = document['name'];
+                    String emptySpace = '                ';
+
+                    String breakTimeString =
+                        DateFormat.Hm().format(breakTimeRaw);
+
                     return Container(
-                      alignment: Alignment(0, -.5),
-                      child: Text(
-                        'Welcome $userName',
-                        style: GoogleFonts.lato(
-                            fontSize: 42, fontWeight: FontWeight.w500),
-                      ),
-                    );
-                  }),
-            ),
+                        alignment: Alignment(0, -.5),
+                        decoration: BoxDecoration(),
+                        child: Text(
+                          'Your Break is Scheduled for: \n $emptySpace $breakTimeString Today',
+                          style: GoogleFonts.lato(
+                              fontSize: 23, fontWeight: FontWeight.w500),
+                        )
+
+                        // FutureBuilder(
+                        //     future: _fetch(),
+                        //     builder: (context, snapshot) {
+                        //       if (snapshot.connectionState !=
+                        //           ConnectionState.done) {
+                        //         return CircularProgressIndicator(
+                        //           color: Colors.green,
+                        //         );
+                        //       }
+                        //       return Container(
+                        //         alignment: Alignment(0, -.5),
+                        //         child: Text(
+                        //           'Welcome $userName',
+                        //           style: GoogleFonts.lato(
+                        //               fontSize: 42, fontWeight: FontWeight.w500),
+                        //         ),
+                        //       );
+                        //     }),
+                        );
+                  } else {
+                    return Text('data');
+                  }
+                })),
 
 /////////////////////////////////////////////////////////////////////
             //this is all the junk text at the top of the screen
@@ -166,7 +200,7 @@ class _HomeState extends State<Home> {
 
                   //This is the Go on Break Button
                   StreamBuilder(
-                      stream: _streamBreak,
+                      stream: breakActivityStream,
                       builder:
                           (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
                         if (snapshot.connectionState ==
@@ -183,40 +217,72 @@ class _HomeState extends State<Home> {
                                     backgroundColor: MaterialStateProperty.all(
                                         Color.fromARGB(255, 0, 111, 70))),
                                 onPressed: (() async {
-                                  print(
-                                      // ignore: prefer_interpolation_to_compose_strings
-                                      'this is the break activity from stream builder: ' +
-                                          test!['isBreakActive'].toString());
-                                  verify = test!['isBreakActive'];
-                                  if (verify == true) {
-                                    //since the break availabity
-                                    Map<String, dynamic> breakToUpdate = {
-                                      'isBreakActive': false,
-                                    };
-                                    breakRef.update(breakToUpdate);
-                                    print('I AM THE BREAK BUTTON');
-                                    //Create a Map with the input data
-                                    Map<String, dynamic> dataToUpdate = {
-                                      'break': timeIsNow,
-                                    };
-                                    //update the break TimeStamp in the database with now
-                                    realRef.update(dataToUpdate);
-                                    //on push bring us to the timer screen
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => Timer()));
-                                  } else {
-                                    showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return AlertDialog(
-                                            title: null,
-                                            content: Text(
-                                                'Sorry, someone else is taking a break right now :('),
-                                          );
-                                        });
-                                  }
+                                  showDialog(
+                                      // show dialog is what helps make this work, thank god ;-;
+                                      barrierDismissible: false,
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: Text('Are You Sure?'),
+                                          content: Text(
+                                              'Are you sure you want to go on break right now?'),
+                                          actions: [
+                                            ElevatedButton(
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                },
+                                                child: Text('No')),
+                                            ElevatedButton(
+                                                onPressed: () {
+                                                  print(
+                                                      // ignore: prefer_interpolation_to_compose_strings
+                                                      'this is the break activity from stream builder: ' +
+                                                          test!['isBreakActive']
+                                                              .toString());
+                                                  verify =
+                                                      test!['isBreakActive'];
+                                                  if (verify == true) {
+                                                    //since the break availabity
+                                                    Map<String, dynamic>
+                                                        breakToUpdate = {
+                                                      'isBreakActive': false,
+                                                    };
+                                                    breakRef
+                                                        .update(breakToUpdate);
+                                                    print(
+                                                        'I AM THE BREAK BUTTON');
+                                                    //Create a Map with the input data
+                                                    Map<String, dynamic>
+                                                        dataToUpdate = {
+                                                      'break': timeIsNow,
+                                                    };
+                                                    //update the break TimeStamp in the database with now
+                                                    realRef
+                                                        .update(dataToUpdate);
+                                                    //on push bring us to the timer screen
+                                                    Navigator.pushReplacement(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder:
+                                                                (context) =>
+                                                                    Timer()));
+                                                  } else {
+                                                    showDialog(
+                                                        context: context,
+                                                        builder: (BuildContext
+                                                            context) {
+                                                          return AlertDialog(
+                                                            title: null,
+                                                            content: Text(
+                                                                'Sorry, someone else is taking a break right now :('),
+                                                          );
+                                                        });
+                                                  }
+                                                },
+                                                child: Text('Yes'))
+                                          ],
+                                        );
+                                      });
                                 }),
                                 child: Text(
                                   'Go On Break',
@@ -249,74 +315,65 @@ class _HomeState extends State<Home> {
                           );
                         }
                       }),
-                  // SizedBox(
-                  //   height: 50,
-                  //   width: 260,
-                  //   child: ElevatedButton(
-                  //       style: ButtonStyle(
-                  //           backgroundColor: MaterialStateProperty.all(
-                  //               Color.fromARGB(255, 0, 111, 70))),
-                  //       onPressed: (() async {
-                  //         if (canIBreak!) {
-                  //           //since the break availabity
-                  //           Map<String, dynamic> breakToUpdate = {
-                  //             'isBreakActive': false,
-                  //           };
-                  //           breakRef.update(breakToUpdate);
-                  //           print('I AM THE BREAK BUTTON');
-                  //           //Create a Map with the input data
-                  //           Map<String, dynamic> dataToUpdate = {
-                  //             'break': timeIsNow,
-                  //           };
-                  //           //update the break TimeStamp in the database with now
-                  //           realRef.update(dataToUpdate);
-                  //           //on push bring us to the timer screen
-                  //           Navigator.push(
-                  //               context,
-                  //               MaterialPageRoute(
-                  //                   builder: (context) => Timer()));
-                  //         } else {
-                  //           showDialog(
-                  //               context: context,
-                  //               builder: (BuildContext context) {
-                  //                 return AlertDialog(
-                  //                   title: null,
-                  //                   content: Text(
-                  //                       'Sorry, someone else is taking a break right now :('),
-                  //                 );
-                  //               });
-                  //         }
-                  //       }),
-                  //       child: Text(
-                  //         'Go On Break',
-                  //         style: TextStyle(fontSize: 23),
-                  //       )),
-                  // ),
                 ],
               ),
             ),
 
             //this is the toggleable breakActivity button
-            Container(
-              alignment: Alignment(.92, .988),
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Color.fromARGB(255, 0, 111, 70))),
-                  onPressed: () async {
-                    Map<String, dynamic> breakToUpdate = {
-                      'isBreakActive': false,
-                    };
-                    breakRef.update(breakToUpdate);
-
-                    if (canIBreak!) {
-                      print('the break is true!!!!');
-                    } else {
-                      print('the break is false!!!!');
-                    }
-                  },
-                  child: Text('Toggle breakActivity')),
-            ),
+            StreamBuilder(
+                stream: breakActivityStream,
+                builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.active) {
+                    DocumentSnapshot? test1 = snapshot.data;
+                    return Container(
+                      alignment: Alignment(.92, .988),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all(
+                                  Color.fromARGB(255, 0, 111, 70))),
+                          onPressed: () async {
+                            verify = test1!['isBreakActive'];
+                            if (verify == false) {
+                              Map<String, dynamic> breakToUpdate = {
+                                'isBreakActive': true,
+                              };
+                              breakRef.update(breakToUpdate);
+                            } else {
+                              Map<String, dynamic> breakToUpdate = {
+                                'isBreakActive': false,
+                              };
+                              breakRef.update(breakToUpdate);
+                            }
+                          },
+                          child: Text('Toggle breakActivity')),
+                    );
+                  } else {
+                    return Text('null');
+                    // DocumentSnapshot? test2 = snapshot.data;
+                    // return Container(
+                    //   alignment: Alignment(.92, .988),
+                    //   child: ElevatedButton(
+                    //       style: ButtonStyle(
+                    //           backgroundColor: MaterialStateProperty.all(
+                    //               Color.fromARGB(255, 0, 111, 70))),
+                    //       onPressed: () async {
+                    //         if (test2 == false) {
+                    //           Map<String, dynamic> breakToUpdate = {
+                    //             'isBreakActive': true,
+                    //           };
+                    //           breakRef.update(breakToUpdate);
+                    //         }
+                    //         if (test2 == true) {
+                    //           Map<String, dynamic> breakToUpdate = {
+                    //             'isBreakActive': false,
+                    //           };
+                    //           breakRef.update(breakToUpdate);
+                    //         }
+                    //       },
+                    //       child: Text('Toggle breakActivity')),
+                    // );
+                  }
+                }),
 
             //this is the Log out Button
             Container(
@@ -356,7 +413,7 @@ class _HomeState extends State<Home> {
   isBreakActive() async {
     // ignore: await_only_futures
     await FirebaseFirestore.instance
-        .collection('Shoppers')
+        .collection('BreakActivity')
         .doc('breakActivity')
         .get()
         .then((ds) {
@@ -364,23 +421,3 @@ class _HomeState extends State<Home> {
     });
   }
 }
-
-// Text(
-//                       'Hello! $userName',
-//                       style: GoogleFonts.montserrat(fontSize: 30),
-//                     );
-
-/*
-
- User? user = FirebaseAuth.instance.currentUser;
-    final realRef =
-        FirebaseFirestore.instance.collection("Shoppers").doc(user!.uid).get();
-*/
-
-/* Future builder idea
-FutureBuilder(
-                              future: isBreakActive(),
-                              builder: (context, snapshot) {
-                                
-                              });
-*/

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amazonbreak/notification_api.dart';
 import 'package:amazonbreak/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,13 +37,22 @@ class _TimerState extends State<Timer> {
   bool? canIBreak;
 
 //
-  DocumentReference breakRef =
-      FirebaseFirestore.instance.collection("Shoppers").doc("breakActivity");
+  DocumentReference breakRef = FirebaseFirestore.instance
+      .collection("BreakActivity")
+      .doc("breakActivity");
 
   void initState() {
     //_fetch2();
+    // NotificationApi.init();
+    // listenNotifications();
     super.initState();
   }
+
+  // void listenNotifications() =>
+  //     NotificationApi.onNotifications.stream.listen(onClickedNotification);
+
+  // void onClickedNotification(String? payload) => Navigator.of(context)
+  //     .push(MaterialPageRoute(builder: ((context) => Home())));
 
   @override
   Widget build(BuildContext context) {
@@ -50,29 +60,17 @@ class _TimerState extends State<Timer> {
         body: Stack(
           children: [
             Container(
-                alignment: Alignment(0, -1),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      FutureBuilder(
-                          future: _fetch2(),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState !=
-                                ConnectionState.done) {
-                              return Text('Loading....');
-                            }
-                            return Text(
-                                'is breakover firestore: $isBreakOverFireStore');
-                          })
-                    ])),
-            Container(
               alignment: Alignment.center,
               //this will be the actual timer widget
               child: TimerCountdown(
                 format: CountDownTimerFormat.minutesSeconds,
-                endTime: DateTime.now().add(Duration(minutes: 0, seconds: 30)),
+                endTime: DateTime.now().add(Duration(minutes: 0, seconds: 5)),
                 onEnd: () {
+                  NotificationApi.showNotification(
+                    title: 'Hey!!',
+                    body: 'Break time is over buddy!',
+                    payload: 'test',
+                  );
                   createAlertDialog(context);
                   Map<String, dynamic> breakToUpdate = {
                     'isBreakActive': true,
