@@ -43,4 +43,19 @@ class NotificationApi {
         await _notificationDetails(),
         payload: payload,
       );
+
+  static void showScheduledNotification({
+    int id = 0,
+    String? title,
+    String? body,
+    String? payload,
+    required DateTime scheduledDate,
+  }) async =>
+      _notifications.show(
+        id, 
+        title, 
+        body,
+       
+        await _notificationDetails(),
+          payload: payload);
 }
