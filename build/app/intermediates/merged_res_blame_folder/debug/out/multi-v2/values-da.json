@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
+            "outputFile": "C:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kesha\\.gradle\\caches\\transforms-3\\19fea4fb28dedd992824e13cc158e7a1\\transformed\\jetified-play-services-base-18.0.1\\res\\values-da\\values.xml",

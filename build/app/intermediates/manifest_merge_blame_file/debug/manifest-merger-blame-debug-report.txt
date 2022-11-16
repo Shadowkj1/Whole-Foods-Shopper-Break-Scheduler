@@ -13,23 +13,23 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\android\app\src\debug\AndroidManifest.xml:7:22-64
+15-->C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-16-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
-16-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+16-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+16-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
 17    <uses-permission android:name="android.permission.VIBRATE" />
-17-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
-17-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
+17-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
+17-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
 18    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
-18-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
-18-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+18-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+18-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
 19    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-19-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
-19-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
+19-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
+19-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
 20    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-20-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
-20-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
+20-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
+20-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
 21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 21-->[com.google.firebase:firebase-auth:21.0.8] C:\Users\kesha\.gradle\caches\transforms-3\c3ab1ab857f2eedf147850d11689a491\transformed\jetified-firebase-auth-21.0.8\AndroidManifest.xml:24:5-79
 21-->[com.google.firebase:firebase-auth:21.0.8] C:\Users\kesha\.gradle\caches\transforms-3\c3ab1ab857f2eedf147850d11689a491\transformed\jetified-firebase-auth-21.0.8\AndroidManifest.xml:24:22-76
@@ -75,31 +75,31 @@
 60            android:value="2" />
 61
 62        <service
-62-->[:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+62-->[:firebase_auth] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
 63            android:name="com.google.firebase.components.ComponentDiscoveryService"
-63-->[:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+63-->[:firebase_auth] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
 64            android:directBootAware="true"
 64-->[com.google.firebase:firebase-common:20.1.2] C:\Users\kesha\.gradle\caches\transforms-3\51d5a07600719f8767e44db6f2a9636e\transformed\jetified-firebase-common-20.1.2\AndroidManifest.xml:35:13-43
 65            android:exported="false" >
 65-->[com.google.firebase:firebase-auth:21.0.8] C:\Users\kesha\.gradle\caches\transforms-3\c3ab1ab857f2eedf147850d11689a491\transformed\jetified-firebase-auth-21.0.8\AndroidManifest.xml:66:13-37
 66            <meta-data
-66-->[:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+66-->[:firebase_auth] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 67                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-67-->[:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+67-->[:firebase_auth] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 68                android:value="com.google.firebase.components.ComponentRegistrar" />
-68-->[:firebase_auth] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+68-->[:firebase_auth] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 69            <meta-data
-69-->[:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+69-->[:cloud_firestore] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-70-->[:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+70-->[:cloud_firestore] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 71                android:value="com.google.firebase.components.ComponentRegistrar" />
-71-->[:cloud_firestore] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+71-->[:cloud_firestore] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 72            <meta-data
-72-->[:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+72-->[:firebase_core] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-73-->[:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+73-->[:firebase_core] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 74                android:value="com.google.firebase.components.ComponentRegistrar" />
-74-->[:firebase_core] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+74-->[:firebase_core] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 75            <meta-data
 75-->[com.google.firebase:firebase-auth:21.0.8] C:\Users\kesha\.gradle\caches\transforms-3\c3ab1ab857f2eedf147850d11689a491\transformed\jetified-firebase-auth-21.0.8\AndroidManifest.xml:67:13-69:85
 76                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -115,37 +115,37 @@
 81        </service>
 82
 83        <receiver
-83-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
+83-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
 84            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
-84-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-91
+84-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-91
 85            android:exported="false" />
-85-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+85-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
 86        <receiver
-86-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-21:40
+86-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-21:40
 87            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-87-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-97
+87-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-97
 88            android:exported="false" />
-88-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+88-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
 89        <receiver
-89-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-31:20
+89-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-31:20
 90            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-90-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-101
+90-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-101
 91            android:exported="false" >
-91-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
+91-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
 92            <intent-filter>
-92-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-30:29
+92-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-30:29
 93                <action android:name="android.intent.action.BOOT_COMPLETED" />
-93-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-79
-93-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-76
+93-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-79
+93-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-76
 94                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-94-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-84
-94-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-81
+94-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-84
+94-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-81
 95                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-95-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:17-82
-95-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:25-79
+95-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:17-82
+95-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:25-79
 96                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-96-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-82
-96-->[:flutter_local_notifications] G:\Files\Documents (but Better)\Visual Studio\Comp 269\RealApps\amazonbreak\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-79
+96-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-82
+96-->[:flutter_local_notifications] C:\Users\kesha\Documents\VsCode\flutter projects\break_scheduler-1\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-79
 97            </intent-filter>
 98        </receiver>
 99
