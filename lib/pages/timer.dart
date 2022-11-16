@@ -60,23 +60,6 @@ class _TimerState extends State<Timer> {
         body: Stack(
           children: [
             Container(
-                alignment: Alignment(0, -1),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      FutureBuilder(
-                          future: _fetch2(),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState !=
-                                ConnectionState.done) {
-                              return Text('Loading....');
-                            }
-                            return Text(
-                                'is breakover firestore: $isBreakOverFireStore');
-                          })
-                    ])),
-            Container(
               alignment: Alignment.center,
               //this will be the actual timer widget
               child: TimerCountdown(
@@ -86,7 +69,7 @@ class _TimerState extends State<Timer> {
                   NotificationApi.showNotification(
                     title: 'Hey!!',
                     body: 'Break time is over buddy!',
-                    payload: 'sarah.abs',
+                    payload: 'test',
                   );
                   createAlertDialog(context);
                   Map<String, dynamic> breakToUpdate = {
