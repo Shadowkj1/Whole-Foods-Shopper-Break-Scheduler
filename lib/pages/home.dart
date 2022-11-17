@@ -240,7 +240,7 @@ class _HomeState extends State<Home> {
                                                           test!['isBreakActive']
                                                               .toString());
                                                   verify =
-                                                      test!['isBreakActive'];
+                                                      test['isBreakActive'];
                                                   if (verify == true) {
                                                     //since the break availabity
                                                     Map<String, dynamic>
