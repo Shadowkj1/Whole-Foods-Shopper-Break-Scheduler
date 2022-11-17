@@ -137,9 +137,9 @@ class _ScheduleState extends State<Schedule> {
                                       child: Text("$breakEnd -> $shiftEnd",
                                           style: TextStyle(fontSize: 19))),
                                   Container(
-                                      alignment: Alignment(.8, .5),
+                                      alignment: Alignment(.95, .86),
                                       child: Text(
-                                          "Break Taken $breakTakenString",
+                                          "Break Taken at $breakTakenString",
                                           style: TextStyle(fontSize: 19))),
                                 ],
                               ),
