@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Timer extends StatefulWidget {
   const Timer({super.key});
@@ -65,34 +66,37 @@ class _TimerState extends State<Timer> {
               child: TimerCountdown(
                 format: CountDownTimerFormat.minutesSeconds,
                 endTime: DateTime.now().add(Duration(minutes: 0, seconds: 5)),
+                timeTextStyle:
+                    TextStyle(fontStyle: FontStyle.italic, fontSize: 60),
+                descriptionTextStyle: TextStyle(
+                    fontSize: 30, color: Colors.black.withOpacity(.6)),
                 onEnd: () {
                   NotificationApi.showNotification(
                     title: 'Hey!!',
                     body: 'Break time is over buddy!',
                     payload: 'test',
                   );
-                  createAlertDialog(context);
-                  Map<String, dynamic> breakToUpdate = {
-                    'isBreakActive': true,
-                  };
-                  breakRef.update(breakToUpdate);
+                  // createAlertDialog(context);
+                  // Map<String, dynamic> breakToUpdate = {
+                  //   'isBreakActive': true,
+                  // };
+                  // breakRef.update(breakToUpdate);
                 },
               ),
             ),
-            Container(
-              alignment: Alignment(.92, .988),
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Color.fromARGB(255, 0, 111, 70))),
-                  onPressed: () async {},
-                  child: Text('Set Break Time')),
-            )
+            // Container(
+            //   alignment: Alignment.center,
+            //   child: Image.asset(
+            //     "assets/7uOr.gif",
+            //     height: 20,
+            //     width: 20,
+            //   ),
+            // ),
           ],
         ),
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 0, 111, 70),
-          title: Text('Break Time'),
+          title: Text('Break Time!'),
         ));
   }
 

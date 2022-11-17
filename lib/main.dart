@@ -12,6 +12,8 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 0, 158, 98),
         splashTransition: SplashTransition.fadeTransition,
         splash: 'assets/WFLogo.png',
-        nextScreen: Login(),
+        nextScreen: Home(),
       ),
     );
   }
