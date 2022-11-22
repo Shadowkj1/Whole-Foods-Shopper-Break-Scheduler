@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 0, 158, 98),
         splashTransition: SplashTransition.fadeTransition,
         splash: 'assets/WFLogo.png',
-        nextScreen: Login(),
+        nextScreen: Home(),
       ),
     );
   }

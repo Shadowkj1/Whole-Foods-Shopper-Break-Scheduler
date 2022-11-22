@@ -4,7 +4,6 @@ import 'package:amazonbreak/notification_api.dart';
 import 'package:amazonbreak/pages/home.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -48,17 +47,8 @@ class _TimerState extends State<Timer> {
       .doc("breakActivity");
 
   void initState() {
-    //_fetch2();
-    // NotificationApi.init();
-    // listenNotifications();
     super.initState();
   }
-
-  // void listenNotifications() =>
-  //     NotificationApi.onNotifications.stream.listen(onClickedNotification);
-
-  // void onClickedNotification(String? payload) => Navigator.of(context)
-  //     .push(MaterialPageRoute(builder: ((context) => Home())));
 
   @override
   Widget build(BuildContext context) {

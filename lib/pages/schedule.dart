@@ -55,11 +55,19 @@ class _ScheduleState extends State<Schedule> {
                       listQueryDocumentSnapshot[index];
                   /////////////////////////////////////////
                   ///Where the logic happens
+                  ///A problem with putting all of the logic here is that it requires that I
+                  ///have the exact same fields in each document...
+                  ///I could fix that... I am lazy
                   DateTime sStart, sEnd, bStart, bEnd, test;
-                  DateTime breakTaken;
+                  DateTime breakTakenTime;
+                  bool breakTakenToday;
 
-                  breakTaken = document['break'].toDate();
-                  String breakTakenString = DateFormat.Hm().format(breakTaken);
+                  String youTookYourBreak;
+                  breakTakenToday = document['breakTakenToday'];
+
+                  breakTakenTime = document['break'].toDate();
+                  String breakTimeTakenString =
+                      DateFormat.Hm().format(breakTakenTime);
 
                   //we will only need to take in the 'shift' time because we can just do all the math
                   //with that one variable (maybe)
@@ -68,7 +76,7 @@ class _ScheduleState extends State<Schedule> {
 
                   //we are gonna wanna randomize it but for now all breaks start
                   //an hour and 30 minutes in
-                  bStart = sStart.add(Duration(hours: 1, minutes: 30));
+                  bStart = document['officialBreakTime'].toDate();
                   String breakStart = DateFormat.Hm().format(bStart);
 
                   //shifts are going to be 4 hours and 30 minutes long
@@ -83,6 +91,12 @@ class _ScheduleState extends State<Schedule> {
                   //this is just a test for the formatting
                   test = sStart;
                   String formattedTime = DateFormat.Hm().format(test);
+
+                  if (breakTakenToday == true) {
+                    youTookYourBreak = "Break Taken $breakTimeTakenString";
+                  } else {
+                    youTookYourBreak = '';
+                  }
                   //////////////////////////////////////
                   return Container(
                     color: Color.fromARGB(120, 0, 198, 123),
@@ -137,10 +151,11 @@ class _ScheduleState extends State<Schedule> {
                                       alignment: Alignment(-.43, .55),
                                       child: Text("$breakEnd -> $shiftEnd",
                                           style: TextStyle(fontSize: 19))),
+
                                   Container(
                                       alignment: Alignment(.8, .5),
                                       child: Text(
-                                          "Break Taken $breakTakenString",
+                                          youTookYourBreak,
                                           style: TextStyle(fontSize: 19))),
                                 ],
                               ),
