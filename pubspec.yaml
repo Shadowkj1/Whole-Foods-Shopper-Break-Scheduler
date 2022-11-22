@@ -43,6 +43,7 @@ dependencies:
   flutter_timer_countdown: ^1.0.5
   flutter_local_notifications: ^12.0.3
   rxdart: ^0.27.6
+  simple_animations: ^5.0.0+3
 
 dev_dependencies:
   flutter_test:

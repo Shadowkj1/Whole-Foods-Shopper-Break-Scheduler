@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Color.fromARGB(255, 0, 158, 98),
         splashTransition: SplashTransition.fadeTransition,
         splash: 'assets/WFLogo.png',
-        nextScreen: Home(),
+        nextScreen: Login(),
       ),
     );
   }

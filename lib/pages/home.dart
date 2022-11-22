@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print, dead_code, unrelated_type_equality_checks
 
+import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
@@ -389,6 +390,21 @@ class _HomeState extends State<Home> {
                     });
                   },
                   child: Text('Log Out')),
+            ),
+            //the animation test screen button
+            Container(
+              alignment: Alignment(0, .8),
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                          Color.fromARGB(255, 0, 111, 70))),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AnimationBackground()));
+                  },
+                  child: Text('Animation Test Screen')),
             ),
           ],
         ));

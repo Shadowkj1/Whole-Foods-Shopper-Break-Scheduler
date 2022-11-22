@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "G:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\kesha\\.gradle\\caches\\transforms-3\\38e30c664341fe5bfcc1d9de04582443\\transformed\\browser-1.4.0\\res\\values\\values.xml",
@@ -57,26 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "145,150",
-                        "startColumns": "4,4",
-                        "startOffsets": "10488,10796",
-                        "endLines": "149,152",
-                        "endColumns": "12,12",
-                        "endOffsets": "10791,10960"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\kesha\\Documents\\VsCode\\flutter projects\\break_scheduler-1\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "G:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -128,6 +109,25 @@
                         "endLines": "2,11,12,25,26,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,114,144,153,157,159,165,167,169,170,189,196,244,276,313,320",
                         "endColumns": "59,71,87,68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,57,60,62,56,50,49,60,56,65,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24,24",
                         "endOffsets": "160,568,656,1645,1708,2154,2222,2294,2364,2425,2499,2572,2633,2694,2756,2820,2882,2943,3011,3111,3171,3237,3310,3379,3436,3488,3550,3834,3910,3975,4034,4093,4153,4213,4273,4333,4393,4453,4513,4573,4633,4693,4752,4812,4872,4932,4992,5052,5112,5172,5232,5292,5352,5411,5471,5531,5590,5649,5708,5767,5826,5885,5980,6015,6070,6133,6188,6246,6304,6365,6428,6485,6536,6586,6647,6704,6770,6804,6839,6874,7072,10483,11077,11278,11454,11838,12033,12172,12239,13291,13589,16889,18954,20714,21091"
+                    }
+                },
+                {
+                    "source": "G:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "145,150",
+                        "startColumns": "4,4",
+                        "startOffsets": "10488,10796",
+                        "endLines": "149,152",
+                        "endColumns": "12,12",
+                        "endOffsets": "10791,10960"
                     }
                 },
                 {
