@@ -82,41 +82,35 @@ class _HomeState extends State<Home> {
                   if (snapshot.connectionState == ConnectionState.active) {
                     DocumentSnapshot? document = snapshot.data;
 
-                    DateTime breakTimeRaw = document!['break'].toDate();
+                    DateTime breakTimeRaw =
+                        document!['officialBreakTime'].toDate();
+
                     String name = document['name'];
                     String emptySpace = '                ';
+                    verify = document['breakTakenToday'];
 
                     String breakTimeString =
                         DateFormat.Hm().format(breakTimeRaw);
 
-                    return Container(
-                        alignment: Alignment(0, -.5),
-                        decoration: BoxDecoration(),
-                        child: Text(
-                          'Your Break is Scheduled for: \n $emptySpace $breakTimeString Today',
-                          style: GoogleFonts.lato(
-                              fontSize: 23, fontWeight: FontWeight.w500),
-                        )
-
-                        // FutureBuilder(
-                        //     future: _fetch(),
-                        //     builder: (context, snapshot) {
-                        //       if (snapshot.connectionState !=
-                        //           ConnectionState.done) {
-                        //         return CircularProgressIndicator(
-                        //           color: Colors.green,
-                        //         );
-                        //       }
-                        //       return Container(
-                        //         alignment: Alignment(0, -.5),
-                        //         child: Text(
-                        //           'Welcome $userName',
-                        //           style: GoogleFonts.lato(
-                        //               fontSize: 42, fontWeight: FontWeight.w500),
-                        //         ),
-                        //       );
-                        //     }),
-                        );
+                    if (verify == false) {
+                      return Container(
+                          alignment: Alignment(0, -.5),
+                          decoration: BoxDecoration(),
+                          child: Text(
+                            'Your Break is Scheduled for: \n $emptySpace $breakTimeString Today',
+                            style: GoogleFonts.lato(
+                                fontSize: 23, fontWeight: FontWeight.w500),
+                          ));
+                    } else {
+                      return Container(
+                          alignment: Alignment(0, -.5),
+                          decoration: BoxDecoration(),
+                          child: Text(
+                            '          You have already  \n taken your break for today',
+                            style: GoogleFonts.lato(
+                                fontSize: 23, fontWeight: FontWeight.w500),
+                          ));
+                    }
                   } else {
                     return Text('data');
                   }
@@ -210,7 +204,7 @@ class _HomeState extends State<Home> {
                           DocumentSnapshot? test = snapshot.data;
                           ///////////////////////////////////////
                           ///
-                          return SizedBox(
+                          return SizedBox( // return a stream builder here and it should work. put the sized box and all of its logic inside of it. //////////////////////////////////////////////////////////////////////////////////////////
                             height: 50,
                             width: 260,
                             child: ElevatedButton(
@@ -240,8 +234,7 @@ class _HomeState extends State<Home> {
                                                       'this is the break activity from stream builder: ' +
                                                           test!['isBreakActive']
                                                               .toString());
-                                                  verify =
-                                                      test['isBreakActive'];
+                                                  verify = test['isBreakActive'];
                                                   if (verify == true) {
                                                     //since the break availabity
                                                     Map<String, dynamic>
@@ -437,3 +430,14 @@ class _HomeState extends State<Home> {
     });
   }
 }
+
+/*
+Container(
+                        alignment: Alignment(0, -.5),
+                        decoration: BoxDecoration(),
+                        child: Text(
+                          'Your Break is Scheduled for: \n $emptySpace $breakTimeString Today',
+                          style: GoogleFonts.lato(
+                              fontSize: 23, fontWeight: FontWeight.w500),
+                        ));
+*/
