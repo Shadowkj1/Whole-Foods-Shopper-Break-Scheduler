@@ -80,6 +80,7 @@ class _HomeState extends State<Home> {
         stream: breakTimeStream,
         builder: (context, AsyncSnapshot<DocumentSnapshot> quickshot) {
           DocumentSnapshot? shopperDocument = quickshot.data;
+          userName = shopperDocument?['name'];
 
           return Scaffold(
               backgroundColor: Color.fromARGB(255, 0, 158, 98),
@@ -605,6 +606,15 @@ class _HomeState extends State<Home> {
                         },
                         child: Text('Log Out')),
                   ),
+                  //User you are signed in as
+
+                  Container(
+                    alignment: Alignment(.91, .98),
+                    child: Text(
+                      'Signed in as: $userName',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  )
                   //the animation test screen button
                   // Container(
                   //   alignment: Alignment(0, .6),

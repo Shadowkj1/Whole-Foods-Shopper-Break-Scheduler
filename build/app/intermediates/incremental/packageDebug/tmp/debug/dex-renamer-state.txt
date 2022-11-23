@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#Thu Nov 17 00:12:53 EST 2022
-=======
-#Tue Nov 22 17:11:11 EST 2022
->>>>>>> Final-Functionality
+#Wed Nov 23 02:58:56 EST 2022
 base.2=G\:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=G\:\\Files\\Documents (but Better)\\Visual Studio\\Comp 269\\RealApps\\amazonbreak\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
