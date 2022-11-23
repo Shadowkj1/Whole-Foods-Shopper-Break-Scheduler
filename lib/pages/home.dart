@@ -113,6 +113,10 @@ class _HomeState extends State<Home> {
                           String breakTimeString =
                               DateFormat.Hm().format(breakTimeRaw);
 
+                          DateTime officialBreakTime =
+                              shopperDocument!['officialBreakTime'].toDate();
+                          breakTakenToday = shopperDocument['breakTakenToday'];
+
                           if (verify == true) {
                             return Container(
                                 alignment: Alignment(0, -.5),
@@ -123,7 +127,19 @@ class _HomeState extends State<Home> {
                                       fontSize: 23,
                                       fontWeight: FontWeight.w500),
                                 ));
-                          } else {
+                          } else if (officialBreakTime.compareTo(timeIsNow) <
+                              0) {
+                            return Container(
+                                alignment: Alignment(0, -.5),
+                                decoration: BoxDecoration(),
+                                child: Text(
+                                  'Your break time has already passed!',
+                                  style: GoogleFonts.lato(
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.w500),
+                                ));
+                          } else if (officialBreakTime.compareTo(timeIsNow) >
+                              0) {
                             return Container(
                                 alignment: Alignment(0, -.5),
                                 decoration: BoxDecoration(),
@@ -134,8 +150,10 @@ class _HomeState extends State<Home> {
                                       fontWeight: FontWeight.w500),
                                 ));
                           }
+
+                          return Text('data failed all checks');
                         } else {
-                          return Text('data');
+                          return Text('There seems to be no connection');
                         }
                       })),
 
