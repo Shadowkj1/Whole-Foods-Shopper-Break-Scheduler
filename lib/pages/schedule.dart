@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class Schedule extends StatefulWidget {
@@ -54,7 +55,19 @@ class _ScheduleState extends State<Schedule> {
                       listQueryDocumentSnapshot[index];
                   /////////////////////////////////////////
                   ///Where the logic happens
+                  ///A problem with putting all of the logic here is that it requires that I
+                  ///have the exact same fields in each document...
+                  ///I could fix that... I am lazy
                   DateTime sStart, sEnd, bStart, bEnd, test;
+                  DateTime breakTakenTime;
+                  bool breakTakenToday;
+
+                  String youTookYourBreak;
+                  breakTakenToday = document['breakTakenToday'];
+
+                  breakTakenTime = document['break'].toDate();
+                  String breakTimeTakenString =
+                      DateFormat.Hm().format(breakTakenTime);
 
                   //we will only need to take in the 'shift' time because we can just do all the math
                   //with that one variable (maybe)
@@ -63,7 +76,7 @@ class _ScheduleState extends State<Schedule> {
 
                   //we are gonna wanna randomize it but for now all breaks start
                   //an hour and 30 minutes in
-                  bStart = sStart.add(Duration(hours: 1, minutes: 30));
+                  bStart = document['officialBreakTime'].toDate();
                   String breakStart = DateFormat.Hm().format(bStart);
 
                   //shifts are going to be 4 hours and 30 minutes long
@@ -78,9 +91,15 @@ class _ScheduleState extends State<Schedule> {
                   //this is just a test for the formatting
                   test = sStart;
                   String formattedTime = DateFormat.Hm().format(test);
+
+                  if (breakTakenToday == true) {
+                    youTookYourBreak = "Break Taken $breakTimeTakenString";
+                  } else {
+                    youTookYourBreak = '';
+                  }
                   //////////////////////////////////////
                   return Container(
-                    color: Color.fromARGB(120, 35, 102, 46),
+                    color: Color.fromARGB(120, 0, 198, 123),
                     child: Stack(
                       children: [
                         Padding(
@@ -89,9 +108,9 @@ class _ScheduleState extends State<Schedule> {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10)),
-                                color: Color.fromARGB(255, 91, 177, 88),
+                                color: Color.fromARGB(255, 0, 133, 83),
                                 border: Border.all(
-                                    color: Color.fromARGB(255, 8, 119, 51))),
+                                    color: Color.fromARGB(255, 1, 86, 54))),
                             //color: Colors.green,
                             alignment: Alignment.center,
                             child: SizedBox(
@@ -132,6 +151,12 @@ class _ScheduleState extends State<Schedule> {
                                       alignment: Alignment(-.43, .55),
                                       child: Text("$breakEnd -> $shiftEnd",
                                           style: TextStyle(fontSize: 19))),
+
+                                  Container(
+                                      alignment: Alignment(.95, .86),
+                                      child: Text(
+                                          youTookYourBreak,
+                                          style: TextStyle(fontSize: 19))),
                                 ],
                               ),
                             ),
@@ -149,8 +174,8 @@ class _ScheduleState extends State<Schedule> {
           },
         ),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 6, 87, 8),
-          title: Text('Schedule'),
+          backgroundColor: Color.fromARGB(255, 0, 111, 70),
+          title: Text('Today\'s Schedule'),
         ));
   }
 }
