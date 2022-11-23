@@ -155,11 +155,7 @@ class _ScheduleState extends State<Schedule> {
                                   Container(
                                       alignment: Alignment(.95, .86),
                                       child: Text(
-<<<<<<< HEAD
-                                          "Break Taken at $breakTakenString",
-=======
                                           youTookYourBreak,
->>>>>>> Final-Functionality
                                           style: TextStyle(fontSize: 19))),
                                 ],
                               ),
