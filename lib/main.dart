@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/pages/login2.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
@@ -12,6 +13,8 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 

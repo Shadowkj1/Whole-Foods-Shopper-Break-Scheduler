@@ -2,6 +2,10 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:rxdart/rxdart.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:timezone/timezone.dart' as tz;
+import 'package:timezone/data/latest.dart' as tz;
+
+
 
 class NotificationApi {
   static final _notifications = FlutterLocalNotificationsPlugin();
@@ -11,14 +15,15 @@ class NotificationApi {
     return NotificationDetails(
       android: AndroidNotificationDetails('channel id', 'channel name',
           channelDescription: 'channel description',
-          icon: "@mipmap/ic_launcher",
+          icon: "drawable/ic_stat_wfcirclelogo",
           importance: Importance.max),
       iOS: DarwinNotificationDetails(), // no clue why this isnt working
     );
   }
 
   static Future init({bool initScheduled = false}) async {
-    final android = AndroidInitializationSettings('@mipmap/ic_launcher');
+    final android = AndroidInitializationSettings(
+        '@drawable/ic_stat_wfcirclelogo'); //used to be '@mipmap/ic_launcher'
     final iOS = DarwinInitializationSettings();
     final settings = InitializationSettings(android: android, iOS: iOS);
 
@@ -51,11 +56,14 @@ class NotificationApi {
     String? payload,
     required DateTime scheduledDate,
   }) async =>
-      _notifications.show(
+      _notifications.zonedSchedule(
         id, 
         title, 
-        body,
-       
+        body, 
+        tz.TZDateTime.from(scheduledDate, tz.local),
         await _notificationDetails(),
-          payload: payload);
+        payload: payload,
+        androidAllowWhileIdle: true,
+        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+          );
 }
