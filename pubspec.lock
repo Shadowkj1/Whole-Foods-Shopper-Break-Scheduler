@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
+  blur:
+    dependency: transitive
+    description:
+      name: blur
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -373,6 +380,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.6"
+  shadow:
+    dependency: "direct main"
+    description:
+      name: shadow
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.5.0"
   simple_animations:
     dependency: "direct main"
     description:

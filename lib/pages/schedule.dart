@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:shadow/shadow.dart';
 
 class Schedule extends StatefulWidget {
   Schedule({super.key});
@@ -99,109 +100,112 @@ class _ScheduleState extends State<Schedule> {
 
                   if (breakTakenToday == true) {
                     youTookYourBreak =
-                        "Break Taken at: \n       $breakTimeTakenString";
+                        "Break Taken at: \n        $breakTimeTakenString";
                   } else {
                     youTookYourBreak = 'Break Not Taken';
                   }
                   //////////////////////////////////////
                   return Container(
-                    color: Color.fromARGB(255, 154, 223, 197),
-                    child: Stack(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(7, 6, 7, 6),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                                color: Color.fromARGB(232, 42, 146, 107),
-                                border: Border.all(
-                                    color: Color.fromARGB(255, 21, 125, 86))),
-                            //color: Colors.green,
-                            alignment: Alignment.center,
-                            child: SizedBox(
-                              height: 140,
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    alignment: Alignment(-.97, -.97),
-                                    child: Text(" $job: $name",
-                                        style: GoogleFonts.yantramanav(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.w500,
-                                          textStyle: TextStyle(
-                                            color:
-                                                Color.fromARGB(240, 19, 19, 19),
-                                          ),
-                                        )),
-                                  ),
-                                  Container(
-                                      alignment: Alignment(.96, -.86),
-                                      child: Text(youTookYourBreak,
+                    color: Color.fromARGB(255, 222, 245, 236),
+                    child: Shadow(
+                      options: ShadowOptions(scale: .2),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(7, 6, 7, 6),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5)),
+                                  color: Color.fromARGB(232, 126, 197, 170),
+                                  border: Border.all(
+                                      color: Color.fromARGB(255, 26, 122, 86))),
+                              //color: Colors.green,
+                              alignment: Alignment.center,
+                              child: SizedBox(
+                                height: 140,
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      alignment: Alignment(-.97, -.97),
+                                      child: Text(" $job: $name",
                                           style: GoogleFonts.yantramanav(
-                                              fontSize: 19,
-                                              fontWeight: FontWeight.w500,
-                                              textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 19, 19, 19))))),
-                                  //an attempt to make all the times condensed into one text widget
-                                  Container(
-                                      alignment: Alignment(-0.9, .4),
-                                      child: Text(
-                                          " $shiftStart   >  $breakStart \n $breakStart   >  $breakEnd  \n $breakEnd   >  $shiftEnd                   ",
-                                          style: GoogleFonts.yantramanav(
-                                              fontSize: 24,
-                                              fontWeight: FontWeight.w400,
-                                              textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 19, 19, 19))))),
-                                  Container(
-                                      alignment: Alignment(-0.93, .4),
-                                      child: Text(
-                                          "                            Shopping\n                            Break \n                            Shopping",
-                                          style: GoogleFonts.yantramanav(
-                                              fontSize: 24,
-                                              fontWeight: FontWeight.w400,
-                                              textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      100, 19, 19, 19))))),
-                                  //Text(document['shift'].toString()),
-                                  //Top Text
-                                  // Container(
-                                  //     alignment: Alignment(-.24, -.5),
-                                  //     child: Text("$shiftStart -> $breakStart",
-                                  //         style: GoogleFonts.yantramanav(
-                                  //             fontSize: 26,
-                                  //             fontWeight: FontWeight.w500,
-                                  //             textStyle: TextStyle(
-                                  //                 color: Color.fromARGB(
-                                  //                     255, 0, 0, 0))))),
-                                  // //Middle text
-                                  // Container(
-                                  //     alignment: Alignment(-.24, 0.1),
-                                  //     child: Text("$breakStart -> $breakEnd",
-                                  //         style: GoogleFonts.yantramanav(
-                                  //             fontSize: 26,
-                                  //             fontWeight: FontWeight.w300,
-                                  //             textStyle: TextStyle(
-                                  //                 color: Color.fromARGB(
-                                  //                     255, 0, 0, 0))))),
-                                  // //Bottom text
-                                  // Container(
-                                  //     alignment: Alignment(-.24, .7),
-                                  //     child: Text("$breakEnd -> $shiftEnd",
-                                  //         style: GoogleFonts.yantramanav(
-                                  //             fontSize: 26,
-                                  //             fontWeight: FontWeight.w400,
-                                  //             textStyle: TextStyle(
-                                  //                 color: Color.fromARGB(
-                                  //                     255, 0, 0, 0))))),
-                                ],
+                                            fontSize: 23,
+                                            fontWeight: FontWeight.w500,
+                                            textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  240, 19, 19, 19),
+                                            ),
+                                          )),
+                                    ),
+                                    Container(
+                                        alignment: Alignment(.96, -.95),
+                                        child: Text(youTookYourBreak,
+                                            style: GoogleFonts.yantramanav(
+                                                fontSize: 19,
+                                                fontWeight: FontWeight.w500,
+                                                textStyle: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 19, 19, 19))))),
+                                    //an attempt to make all the times condensed into one text widget
+                                    Container(
+                                        alignment: Alignment(-0.9, .4),
+                                        child: Text(
+                                            " $shiftStart   >  $breakStart \n $breakStart   >  $breakEnd  \n $breakEnd   >  $shiftEnd                   ",
+                                            style: GoogleFonts.yantramanav(
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.w400,
+                                                textStyle: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 19, 19, 19))))),
+                                    Container(
+                                        alignment: Alignment(-0.93, .4),
+                                        child: Text(
+                                            "                            Shopping\n                            Break \n                            Shopping",
+                                            style: GoogleFonts.yantramanav(
+                                                fontSize: 24,
+                                                fontWeight: FontWeight.w400,
+                                                textStyle: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        100, 19, 19, 19))))),
+                                    //Text(document['shift'].toString()),
+                                    //Top Text
+                                    // Container(
+                                    //     alignment: Alignment(-.24, -.5),
+                                    //     child: Text("$shiftStart -> $breakStart",
+                                    //         style: GoogleFonts.yantramanav(
+                                    //             fontSize: 26,
+                                    //             fontWeight: FontWeight.w500,
+                                    //             textStyle: TextStyle(
+                                    //                 color: Color.fromARGB(
+                                    //                     255, 0, 0, 0))))),
+                                    // //Middle text
+                                    // Container(
+                                    //     alignment: Alignment(-.24, 0.1),
+                                    //     child: Text("$breakStart -> $breakEnd",
+                                    //         style: GoogleFonts.yantramanav(
+                                    //             fontSize: 26,
+                                    //             fontWeight: FontWeight.w300,
+                                    //             textStyle: TextStyle(
+                                    //                 color: Color.fromARGB(
+                                    //                     255, 0, 0, 0))))),
+                                    // //Bottom text
+                                    // Container(
+                                    //     alignment: Alignment(-.24, .7),
+                                    //     child: Text("$breakEnd -> $shiftEnd",
+                                    //         style: GoogleFonts.yantramanav(
+                                    //             fontSize: 26,
+                                    //             fontWeight: FontWeight.w400,
+                                    //             textStyle: TextStyle(
+                                    //                 color: Color.fromARGB(
+                                    //                     255, 0, 0, 0))))),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
@@ -213,7 +217,7 @@ class _ScheduleState extends State<Schedule> {
           },
         ),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 0, 111, 70),
+          backgroundColor: Color.fromARGB(255, 8, 97, 63),
           title: Text('Today\'s Schedule'),
         ));
   }
