@@ -2,7 +2,7 @@
 
 import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/notification_api.dart';
-import 'package:amazonbreak/pages/login2.dart';
+import 'package:amazonbreak/pages/login.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -76,6 +76,7 @@ class _HomeState extends State<Home> {
 ////////////////////////////////////////////////
     //UI
     return SafeArea(
+      
       child: StreamBuilder(
           //if this works I dont know why I didnt do this in the beginning :/
           stream: breakTimeStream,
@@ -275,6 +276,9 @@ class _HomeState extends State<Home> {
                                               context: context,
                                               builder: (context) {
                                                 return AlertDialog(
+                                                  backgroundColor:
+                                                      Color.fromARGB(
+                                                          255, 201, 224, 215),
                                                   title: Text('Are You Sure?'),
                                                   content: Text(
                                                       'Are you sure you want to go on break right now?'),
@@ -365,6 +369,11 @@ class _HomeState extends State<Home> {
                                                                       (BuildContext
                                                                           context) {
                                                                     return AlertDialog(
+                                                                      backgroundColor: Color.fromARGB(
+                                                                          255,
+                                                                          201,
+                                                                          224,
+                                                                          215),
                                                                       title:
                                                                           null,
                                                                       content: Text(
@@ -380,6 +389,12 @@ class _HomeState extends State<Home> {
                                                                     (BuildContext
                                                                         context) {
                                                                   return AlertDialog(
+                                                                    backgroundColor:
+                                                                        Color.fromARGB(
+                                                                            255,
+                                                                            201,
+                                                                            224,
+                                                                            215),
                                                                     title: null,
                                                                     content: Text(
                                                                         'you already took your breaks for the day'),
@@ -412,6 +427,9 @@ class _HomeState extends State<Home> {
                                               context: context,
                                               builder: (BuildContext context) {
                                                 return AlertDialog(
+                                                  backgroundColor:
+                                                      Color.fromARGB(
+                                                          255, 201, 224, 215),
                                                   title: Text('no connection'),
                                                   content: Text(
                                                       'there seems to be no connection, please verify your connection and try again later'),
@@ -458,6 +476,8 @@ class _HomeState extends State<Home> {
                                           context: context,
                                           builder: (context) {
                                             return AlertDialog(
+                                              backgroundColor: Color.fromARGB(
+                                                  255, 201, 224, 215),
                                               title: Text(
                                                   'Set an alarm prior to your break'),
                                               content: Text(
@@ -496,6 +516,12 @@ class _HomeState extends State<Home> {
                                                                 (BuildContext
                                                                     context) {
                                                               return AlertDialog(
+                                                                backgroundColor:
+                                                                    Color.fromARGB(
+                                                                        255,
+                                                                        201,
+                                                                        224,
+                                                                        215),
                                                                 title: null,
                                                                 content: Text(
                                                                     'Invalid Username or Password'),
@@ -566,6 +592,8 @@ class _HomeState extends State<Home> {
                                           context: context,
                                           builder: (context) {
                                             return AlertDialog(
+                                              backgroundColor: Color.fromARGB(
+                                                  255, 201, 224, 215),
                                               title: null,
                                               content: Text(
                                                   'You have already taken your break for today. There is no need to schedule an alarm'),
@@ -577,6 +605,8 @@ class _HomeState extends State<Home> {
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
+                                            backgroundColor: Color.fromARGB(
+                                                255, 201, 224, 215),
                                             title: null,
                                             content: Text(
                                                 'Your scheduled break time has already passed. There is no need to set an alarm. Use the "Go On Break" button before your shift ends.'),

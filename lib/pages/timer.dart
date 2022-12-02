@@ -157,14 +157,19 @@ class _TimerState extends State<Timer> {
         builder: (context) {
           return AlertDialog(
             title: null,
+            backgroundColor: Color.fromARGB(255, 201, 224, 215),
             content: Text('get back to work :)'),
             actions: [
               ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 0, 111, 70)),
                   onPressed: () {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => Home()));
                   },
-                  child: Text('ok :('))
+                  child: Text(
+                    'ok :(',
+                  ))
             ],
           );
         });

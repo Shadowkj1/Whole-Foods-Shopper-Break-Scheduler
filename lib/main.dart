@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:amazonbreak/animation_test.dart';
-import 'package:amazonbreak/pages/login2.dart';
+import 'package:amazonbreak/pages/login.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
@@ -24,13 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Whole Foods Break Scheduler',
       home: AnimatedSplashScreen(
         duration: 2000,
         backgroundColor: Color.fromARGB(255, 0, 158, 98),
         splashTransition: SplashTransition.fadeTransition,
         splash: 'assets/WFLogo.png',
-        nextScreen: Home(),
+        nextScreen: Login(),
       ),
     );
   }
