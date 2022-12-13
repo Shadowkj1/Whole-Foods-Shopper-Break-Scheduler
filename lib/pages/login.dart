@@ -7,6 +7,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'forgot_password.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -121,6 +123,24 @@ class _LoginState extends State<Login> {
                 }
                 setState(() {});
               },
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            //Text Button that says forgot password
+            TextButton(
+              onPressed: () {
+                //navigate to forgot password screen
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ForgotPassword()));
+              },
+              child: Text(
+                'Forgot Password?',
+                style: TextStyle(
+                    fontSize: 19,
+                    color: Color.fromARGB(255, 1, 86, 54),
+                    decoration: TextDecoration.underline),
+              ),
             ),
           ],
         ),
