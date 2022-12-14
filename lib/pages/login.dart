@@ -147,15 +147,4 @@ class _LoginState extends State<Login> {
       ),
     );
   }
-/*
-  Future signIn() async {
-    await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: passwordController.text.trim(),
-        )
-        .then((value) => Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Home())));
-  }
-  */
 }

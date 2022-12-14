@@ -168,37 +168,6 @@ class _ScheduleState extends State<Schedule> {
                                                 textStyle: TextStyle(
                                                     color: Color.fromARGB(
                                                         100, 19, 19, 19))))),
-                                    //Text(document['shift'].toString()),
-                                    //Top Text
-                                    // Container(
-                                    //     alignment: Alignment(-.24, -.5),
-                                    //     child: Text("$shiftStart -> $breakStart",
-                                    //         style: GoogleFonts.yantramanav(
-                                    //             fontSize: 26,
-                                    //             fontWeight: FontWeight.w500,
-                                    //             textStyle: TextStyle(
-                                    //                 color: Color.fromARGB(
-                                    //                     255, 0, 0, 0))))),
-                                    // //Middle text
-                                    // Container(
-                                    //     alignment: Alignment(-.24, 0.1),
-                                    //     child: Text("$breakStart -> $breakEnd",
-                                    //         style: GoogleFonts.yantramanav(
-                                    //             fontSize: 26,
-                                    //             fontWeight: FontWeight.w300,
-                                    //             textStyle: TextStyle(
-                                    //                 color: Color.fromARGB(
-                                    //                     255, 0, 0, 0))))),
-                                    // //Bottom text
-                                    // Container(
-                                    //     alignment: Alignment(-.24, .7),
-                                    //     child: Text("$breakEnd -> $shiftEnd",
-                                    //         style: GoogleFonts.yantramanav(
-                                    //             fontSize: 26,
-                                    //             fontWeight: FontWeight.w400,
-                                    //             textStyle: TextStyle(
-                                    //                 color: Color.fromARGB(
-                                    //                     255, 0, 0, 0))))),
                                   ],
                                 ),
                               ),
@@ -222,28 +191,3 @@ class _ScheduleState extends State<Schedule> {
         ));
   }
 }
-
-/*
-Column(
-                    children: [
-                      Stack(
-                        children: [],
-                      ),
-                      Text(
-                        document['job'],
-                        style: TextStyle(color: Colors.deepPurple),
-                      ),
-                      Text(
-                        document['name'],
-                        style: TextStyle(color: Colors.deepPurple),
-                      ),
-                      Text(document['shift'].toString()),
-                      Text("Shift Start: " + ho.toString()),
-                      Text("Shift End: " + end.toString()),
-                      Text("This is the Test Time:  " + formattedTime),
-                      SizedBox(
-                        height: 30,
-                      ),
-                    ],
-                  );
-*/

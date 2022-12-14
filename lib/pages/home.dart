@@ -76,7 +76,6 @@ class _HomeState extends State<Home> {
 ////////////////////////////////////////////////
     //UI
     return SafeArea(
-      
       child: StreamBuilder(
           //if this works I dont know why I didnt do this in the beginning :/
           stream: breakTimeStream,
@@ -165,51 +164,6 @@ class _HomeState extends State<Home> {
                             }
                           })),
                     ),
-
-                    /////////////////////////////////////////////////////////////////////
-                    //this is all the junk text at the top of the screen
-                    // Container(
-                    //   alignment: Alignment(0, -1),
-                    //   child: Column(
-                    //     mainAxisAlignment: MainAxisAlignment.start,
-                    //     crossAxisAlignment: CrossAxisAlignment.center,
-                    //     children: [
-                    //       SizedBox(height: 30),
-                    //       Text(
-                    //           "Auth User (Logged${aUser == null ? " out" : " in"})"),
-                    //       SizedBox(),
-                    //       Text("Uid = " + (aUser == null ? " out" : aUser.uid)),
-                    //       FutureBuilder(
-                    //           future: _fetch(),
-                    //           builder: (context, snapshot) {
-                    //             if (snapshot.connectionState !=
-                    //                 ConnectionState.done)
-                    //               return Text('Loading data....Please wait');
-                    //             return Text('your name:  $userName');
-                    //           }),
-                    //       FutureBuilder(
-                    //           future: _fetch(),
-                    //           builder: (context, snapshot) {
-                    //             if (snapshot.connectionState !=
-                    //                 ConnectionState.done) {
-                    //               return Text('Loading....');
-                    //             }
-                    //             return Text('shift time: ....nothing');
-                    //           }),
-                    //       FutureBuilder(
-                    //           future: isBreakActive(),
-                    //           builder: (context, snapshot) {
-                    //             if (snapshot.connectionState !=
-                    //                 ConnectionState.done) {
-                    //               return Text('Loading....');
-                    //             }
-                    //             return Text('$canIBreak');
-                    //           })
-                    //     ],
-                    //   ),
-                    // ),
-                    /////////////////////////////////////////////////////////////////////////
-                    ///
                     // this is the todays schedule button
                     Container(
                       alignment: Alignment(0, -1),
@@ -498,9 +452,9 @@ class _HomeState extends State<Home> {
                                                       try {
                                                         NotificationApi.showScheduledNotification(
                                                             title:
-                                                                '10 sec test notif',
+                                                                'This is your 10 second alarm',
                                                             body:
-                                                                'd-did he work?',
+                                                                'Your break is coming at breakneck speeds of 10 seconds',
                                                             payload:
                                                                 '5_min_notif',
                                                             scheduledDate:

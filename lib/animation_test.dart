@@ -32,7 +32,8 @@ class AnimationBackground extends StatelessWidget {
       ..scene(
               begin: const Duration(seconds: 1),
               end: const Duration(seconds: 3))
-          .tween(colorController, ColorTween(begin: Colors.yellow, end: Colors.blue));
+          .tween(colorController,
+              ColorTween(begin: Colors.yellow, end: Colors.blue));
     // .thenTween('color2',
     //     ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600),
     //     duration: const Duration(seconds: 3), curve: Curves.easeOut);
