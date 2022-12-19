@@ -1,5 +1,5 @@
 This is my Whole Foods Shopper Break Scheduler
-I made for my Comp 296 class as a capstone.
+I made for my Comp 296 class as a project.
 =======
 The reason for me creating this app was to be a digital representation of the break sheet I have at my job (Whole Foods).
 So you no longer have to go and look at the sheet to know your break information, you can now just look on your phone
