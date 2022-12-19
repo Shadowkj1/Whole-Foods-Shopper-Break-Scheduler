@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_print, dead_code, unrelated_type_equality_checks, non_constant_identifier_names
 
-import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/notification_api.dart';
 import 'package:amazonbreak/pages/login.dart';
 import 'package:amazonbreak/pages/schedule.dart';
@@ -576,42 +575,6 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                     ),
-
-                    //this is the toggleable breakActivity button
-                    // StreamBuilder(
-                    //     stream: breakActivityStream,
-                    //     builder:
-                    //         (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-                    //       if (snapshot.connectionState ==
-                    //           ConnectionState.active) {
-                    //         DocumentSnapshot? test1 = snapshot.data;
-                    //         return Container(
-                    //           alignment: Alignment(.92, .988),
-                    //           child: ElevatedButton(
-                    //               style: ButtonStyle(
-                    //                   backgroundColor: MaterialStateProperty.all(
-                    //                       Color.fromARGB(255, 0, 111, 70))),
-                    //               onPressed: () async {
-                    //                 verify = test1!['isBreakActive'];
-                    //                 if (verify == false) {
-                    //                   Map<String, dynamic> breakToUpdate = {
-                    //                     'isBreakActive': true,
-                    //                   };
-                    //                   breakRef.update(breakToUpdate);
-                    //                 } else {
-                    //                   Map<String, dynamic> breakToUpdate = {
-                    //                     'isBreakActive': false,
-                    //                   };
-                    //                   breakRef.update(breakToUpdate);
-                    //                 }
-                    //               },
-                    //               child: Text('Toggle breakActivity')),
-                    //         );
-                    //       } else {
-                    //         return Text('null');
-                    //       }
-                    //     }),
-
                     //this is the Log out Button
                     Container(
                       alignment: Alignment(-.92, .988),
@@ -637,22 +600,7 @@ class _HomeState extends State<Home> {
                         'Signed in as: $userName',
                         style: TextStyle(fontSize: 18),
                       ),
-                    )
-                    //the animation test screen button
-                    // Container(
-                    //   alignment: Alignment(0, .6),
-                    //   child: ElevatedButton(
-                    //       style: ButtonStyle(
-                    //           backgroundColor: MaterialStateProperty.all(
-                    //               Color.fromARGB(255, 0, 111, 70))),
-                    //       onPressed: () {
-                    //         Navigator.push(
-                    //             context,
-                    //             MaterialPageRoute(
-                    //                 builder: (context) => AnimationBackground()));
-                    //       },
-                    //       child: Text('Animation Test Screen')),
-                    // ),
+                    ),
                   ],
                 ));
           }),

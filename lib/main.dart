@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'package:amazonbreak/animation_test.dart';
 import 'package:amazonbreak/pages/login.dart';
 import 'package:amazonbreak/pages/schedule.dart';
 import 'package:amazonbreak/pages/timer.dart';
