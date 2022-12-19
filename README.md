@@ -1,26 +1,10 @@
 <<<<<<< HEAD
 # break_scheduler
-break scheduler made with Flutters Dart and Firebase Firestore for Comp 296 Capstone
+This is a break scheduler I made for my Comp 296 class as a capstone.
 =======
 <<<<<<< HEAD
 # amazonbreak
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The reason for me creating this app was to be a digital representation of the break sheet I have at my job (Whole Foods).
+So you no longer have to go and look at the sheet to know your break information, you can now just look on your phone
 =======
-# break_scheduler
-break scheduler made with Flutters Dart and Firebase Firestore for Comp 296 Capstone
->>>>>>> fba32d7 (Initial commit)
->>>>>>> f489abe (Initial commit)
+This was made with VSCode, Flutter, Dart, Firebase's Authentification, Firebase Firestore (database) and made for android phones.
